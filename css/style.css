@@ -20,7 +20,7 @@ body{
 .container{
     max-width: 600px;
     height: 500px;
-    margin: 40px auto;
+    margin: 60px auto;
     padding: 20px;
     background-color: var(--dark-green);
     /* border: 1px solid #ddd; */
@@ -29,6 +29,43 @@ body{
     text-align: center;
     color: wheat;
 }
+h1{
+    font-size: 40px;
+}
+
+h1 i{
+    margin: 0 20px;
+}
+
+.inputContent{
+    margin: 30px 20px;
+}
+
+.inputContent .todoInput{
+    width: 400px;
+    padding: 12px;
+    border: none;
+    border-radius: 20px;
+    margin: 0 20px;
+}
+
+.todoInput:focus{
+    outline: none;
+    box-shadow: 0 0 10px var(--light-green);
+}
+
+.addTask{
+    color: wheat;
+    background-color: var(--light-green);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+
 
 
 
