@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color: #333;
+    --dark-green: #2F6058;
+    --light-green: #89C1B6;
+
+
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: var(--light-green);
+}
+
+.container{
+    max-width: 600px;
+    height: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: var(--dark-green);
+    /* border: 1px solid #ddd; */
+    box-shadow: 50px 50px 100px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    text-align: center;
+    color: wheat;
+}
+
+
+
+
+
