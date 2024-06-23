@@ -4,21 +4,13 @@ const todosContainer = document.querySelector(".todos")
 
 const toggleComplete = (event) => {
     const todoItem = event.target.parentNode
-    const todoText = todoItem.querySelector(".todoText").textContent  //!
     todoItem.classList.toggle("checked")
     event.target.classList.toggle("fa-circle-check")
-    event.target.classList.toggle("fa-circle")   
-    updateLocalStorage(todoText, 'toggle')  //! 
+    event.target.classList.toggle("fa-circle")    
 }
 
 const removeItem = (event) => {
-    // todosContainer.removeChild(event.currentTarget.parentElement)
-    //! Buradan
-    const todoItem = event.currentTarget.parentElement
-    const todoText = todoItem.querySelector(".todoText").textContent
-    todosContainer.removeChild(todoItem)
-    updateLocalStorage(todoText, 'remove')
-    //! buraya kadar
+    todosContainer.removeChild(event.currentTarget.parentElement)
 }
 
 const isDuplicate = (text) => {
@@ -34,11 +26,6 @@ const isDuplicate = (text) => {
 const renderTodoItem = () => {
     const todoItem = document.createElement("li")
     todoItem.classList.add("todoItem")
-
-    //! Buradan
-    if (completed) {
-        todoItem.classList.add("checked")
-    } //! Buraya kadar
 
 
 
@@ -61,8 +48,8 @@ const renderTodoItem = () => {
 
 
     todosContainer.appendChild(todoItem)
-    // todoInput.value = ""
-    // todoInput.focus()
+    todoInput.value = ""
+    todoInput.focus()
 }
 
 const addTask = () => {
@@ -71,41 +58,11 @@ const addTask = () => {
     }else if (isDuplicate(todoInput.value)) {
         alert("This to-do item already exists")
     } else{
-        // renderTodoItem(todoInput.textContent)
-        renderTodoItem(todoInput.value)
-        updateLocalStorage(todoInput.value, 'add')
+        renderTodoItem(todoInput.textContent)
     }
-
-    todoInput.value = "" //!
-    todoInput.focus()  //!
 }
-
-//! Buradan
-const updateLocalStorage = (text, action) => {
-    let todos = JSON.parse(localStorage.getItem("todos")) || []
-    if (action === 'add') {
-        todos.push({ text: text, completed: false })
-    } else if (action === 'remove') {
-        todos = todos.filter(todo => todo.text !== text)
-    } else if (action === 'toggle') {
-        todos = todos.map(todo => {
-            if (todo.text === text) {
-                return { text: todo.text, completed: !todo.completed }
-            }
-            return todo
-        })
-    }
-    localStorage.setItem("todos", JSON.stringify(todos))
-}
-
-const loadTodos = () => {
-    const todos = JSON.parse(localStorage.getItem("todos")) || []
-    todos.forEach(todo => renderTodoItem(todo.text, todo.completed))
-}
-//! buraya kadar
 
 addTaskButton.addEventListener("click", addTask)
-window.addEventListener("load", loadTodos) //!
 
 
 
