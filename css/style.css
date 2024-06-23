@@ -110,6 +110,11 @@ i:hover{
     cursor: pointer;
 }
 
+.checked p{
+    text-decoration: line-through;
+    color: var(--primary-color);
+}
+
 
 
 /* .checkbox:checked{

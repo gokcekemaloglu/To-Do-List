@@ -15,13 +15,26 @@ const todoInput = document.querySelector(".todoInput")
 
 const todosContainer = document.querySelector(".todos")
 
+const toggleComplete = (event) => {
+    const todoItem = event.target.parentNode
+    todoItem.classList.toggle("checked")
+    event.target.classList.toggle("fa-circle-check")
+    event.target.classList.toggle("fa-circle")
+    
+}
+
+const removeItem = (event) => {
+    todosContainer.removeChild(event.currentTarget.parentElement)
+}
+
 const renderTodoItem = () => {
     const todoItem = document.createElement("li")
     todoItem.classList.add("todoItem")
 
-    const deleteButton = document.createElement("i")
-    deleteButton.classList.add("fa-regular", "fa-circle")
-    todoItem.appendChild(deleteButton)
+    const checkButton = document.createElement("i")
+    checkButton.classList.add("fa-regular", "fa-circle")
+    todoItem.addEventListener("click", toggleComplete)
+    todoItem.appendChild(checkButton)
 
 
     const textElement = document.createElement("p")
@@ -30,11 +43,15 @@ const renderTodoItem = () => {
     todoItem.appendChild(textElement)
 
 
-    const checkButton = document.createElement("i")
-    checkButton.classList.add("fa-solid", "fa-trash-can", "deleteTask")
-    todoItem.appendChild(checkButton)
+    const deleteButton = document.createElement("i")
+    deleteButton.classList.add("fa-solid", "fa-trash-can", "deleteTask")
+    deleteButton.addEventListener("click", removeItem)
+    todoItem.appendChild(deleteButton)
+
 
     todosContainer.appendChild(todoItem)
+    todoInput.value = ""
+    todoInput.focus()
 }
 
 const addTask = () => {
