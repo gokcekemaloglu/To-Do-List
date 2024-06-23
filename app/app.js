@@ -17,6 +17,16 @@ const removeItem = (event) => {
     todosContainer.removeChild(event.currentTarget.parentElement)
 }
 
+const isDuplicate = (text) => {
+    const todos = todosContainer.querySelectorAll(".todoText")
+    for (let todo of todos) {
+        if (todo.textContent === text) {
+            return true
+        }
+    }
+    return false
+}
+
 const renderTodoItem = () => {
     const todoItem = document.createElement("li")
     todoItem.classList.add("todoItem")
@@ -47,10 +57,22 @@ const renderTodoItem = () => {
 const addTask = () => {
     if (todoInput.value === "") {
         alert("Please enter a to-do")
-    }else{
+    }else if (isDuplicate(todoInput.value)) {
+        alert("This to-do item already exists")
+    } else{
         renderTodoItem(todoInput.textContent)
     }
 }
 
 addTaskButton.addEventListener("click", addTask)
 
+
+
+
+
+
+// if (textElement.textContent.includes(todoInput.value)) {
+//     alert("Please enter a different to-do")
+// }else{
+//     textElement.textContent = todoInput.value
+// }
