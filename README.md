@@ -13,7 +13,7 @@ Project aims to create a simple To-Do App.
 ```
 01-To-Do App (folder)
 |
-|----readme.md         # Given to the students (Definition of the project)          
+|----readme.md                   
 |----solution
         |----index.html  
         |----style.css   
