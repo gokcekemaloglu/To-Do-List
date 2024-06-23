@@ -9,8 +9,6 @@
     --dark-green: #2F6058;
     --medium-green: #438A7E;
     --light-green: #89C1B6;
-
-
 }
 
 body{
@@ -30,6 +28,7 @@ body{
     text-align: center;
     color: wheat;
 }
+
 h1{
     font-size: 40px;
 }
@@ -39,14 +38,14 @@ h1 i{
 }
 
 .inputContent{
-    margin: 30px 20px;
-    
+    margin: 30px 20px;    
 }
 
 .inputContent .todoInput{
     width: 400px;
     padding: 12px;
-    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.7);
     border: none;
     border-radius: 20px;
     margin: 0 20px;
@@ -63,10 +62,16 @@ h1 i{
     background-color: var(--light-green);
     padding: 10px 20px;
     border: none;
+    box-shadow: 3px 3px 3px 3px var(--primary-color);
     border-radius: 20px;
     cursor: pointer;
     font-size: 1rem;
     font-weight: 700;
+}
+
+.addTask:hover{
+    opacity: 0.9;
+    box-shadow: 0 0 10px var(--light-green);
 }
 
 .todos{
@@ -85,15 +90,12 @@ h1 i{
 .todos::-webkit-scrollbar{
     background: var(--light-green);
     border-radius: 5px;
-
 }
+
 .todos::-webkit-scrollbar-thumb{
     background: var(--medium-green);
     border-radius: 5px;
-
 }
-
-
 
 .todoItem{
     display: flex;
@@ -105,6 +107,7 @@ h1 i{
 .todoText{
     width: 400px;
     height: 2.5rem;
+    font-weight: 600;
     background-color: var(--light-green);
     border-radius: 10px;
     padding: 10px 20px;
@@ -113,17 +116,19 @@ h1 i{
     overflow-x: hidden;
 }
 
+.todoText:hover{
+    box-shadow: 0 0 10px var(--medium-green);
+}
+
 .todoText::-webkit-scrollbar{
     background: var(--light-green);
     border-radius: 15px;
-
 }
+
 .todoText::-webkit-scrollbar-thumb{
     background: var(--medium-green);
     border-radius: 15px;
-
 }
-
 
 li i{
     /* border: 1px solid red; */
@@ -143,17 +148,4 @@ i:hover{
     text-decoration: line-through;
     color: var(--primary-color);
 }
-
-
-
-/* .checkbox:checked{
-    background-color: var(--light-green);
-    border-color: var(--light-green);    
-} */
-
-
-
-
-
-
 

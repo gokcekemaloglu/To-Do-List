@@ -1,13 +1,4 @@
-// <li class="todoItem">
-//      <i class="fa-regular fa-circle"></i>
-//      <p class="todoText">Buy milk</p>
-//      <i class="fa-solid fa-trash-can deleteTask"></i>
-// </li>
-// <li class="todoItem checked">
-//      <i class="fa-regular fa-circle-check"></i>
-//      <p class="todoText">Buy milk</p>
-//      <i class="fa-solid fa-trash-can deleteTask"></i>
-// </li> 
+
 
 
 const addTaskButton = document.querySelector(".addTask")
@@ -19,8 +10,7 @@ const toggleComplete = (event) => {
     const todoItem = event.target.parentNode
     todoItem.classList.toggle("checked")
     event.target.classList.toggle("fa-circle-check")
-    event.target.classList.toggle("fa-circle")
-    
+    event.target.classList.toggle("fa-circle")    
 }
 
 const removeItem = (event) => {
@@ -60,9 +50,7 @@ const addTask = () => {
     }else{
         renderTodoItem(todoInput.textContent)
     }
-
 }
-
 
 addTaskButton.addEventListener("click", addTask)
 
