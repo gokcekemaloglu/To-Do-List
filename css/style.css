@@ -104,11 +104,26 @@ h1 i{
 
 .todoText{
     width: 400px;
+    height: 2.5rem;
     background-color: var(--light-green);
-    border-radius: 20px;
-    padding: 10px 10px;
-    text-align: left;    
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-align: left;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
+
+.todoText::-webkit-scrollbar{
+    background: var(--light-green);
+    border-radius: 15px;
+
+}
+.todoText::-webkit-scrollbar-thumb{
+    background: var(--medium-green);
+    border-radius: 15px;
+
+}
+
 
 li i{
     /* border: 1px solid red; */

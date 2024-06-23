@@ -33,7 +33,7 @@ const renderTodoItem = () => {
 
     const checkButton = document.createElement("i")
     checkButton.classList.add("fa-regular", "fa-circle")
-    todoItem.addEventListener("click", toggleComplete)
+    checkButton.addEventListener("click", toggleComplete)
     todoItem.appendChild(checkButton)
 
 
