@@ -1,9 +1,5 @@
-
-
-
 const addTaskButton = document.querySelector(".addTask")
 const todoInput = document.querySelector(".todoInput")
-
 const todosContainer = document.querySelector(".todos")
 
 const toggleComplete = (event) => {
@@ -31,6 +27,8 @@ const renderTodoItem = () => {
     const todoItem = document.createElement("li")
     todoItem.classList.add("todoItem")
 
+
+
     const checkButton = document.createElement("i")
     checkButton.classList.add("fa-regular", "fa-circle")
     checkButton.addEventListener("click", toggleComplete)
@@ -39,7 +37,7 @@ const renderTodoItem = () => {
 
     const textElement = document.createElement("p")
     textElement.classList.add("todoText")
-    textElement.textContent = todoInput.value
+    textElement.textContent = todoInput.value.toUpperCase()
     todoItem.appendChild(textElement)
 
 
