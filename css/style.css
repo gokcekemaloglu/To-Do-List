@@ -13,13 +13,13 @@
 }
 
 body{
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif;    
     background-color: var(--light-green);
 }
 
 .container{
     max-width: 600px;
-    height: 500px;
+    height: 600px;
     margin: 60px auto;
     padding: 20px;
     background-color: var(--dark-green);
@@ -39,14 +39,17 @@ h1 i{
 
 .inputContent{
     margin: 30px 20px;
+    
 }
 
 .inputContent .todoInput{
     width: 400px;
     padding: 12px;
+    background-color: rgba(255, 255, 255, 0.8);
     border: none;
     border-radius: 20px;
     margin: 0 20px;
+    box-shadow: 5px 5px 5px 5px var(--primary-color);
 }
 
 .todoInput:focus{
@@ -64,6 +67,55 @@ h1 i{
     font-size: 1rem;
     font-weight: 700;
 }
+
+.todos{
+    /* border: 1px solid red; */
+    list-style-type: none;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: var(--dark-green);
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px 3px var(--primary-color);
+    max-width: 550px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.todoItem{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.todoText{
+    width: 400px;
+    background-color: var(--light-green);
+    border-radius: 20px;
+    padding: 10px 10px;
+    text-align: left;    
+}
+
+li i{
+    /* border: 1px solid red; */
+    font-size: 1.5rem;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 0 5px;    
+}
+
+i:hover{
+    background-color: wheat;
+    color: var(--dark-green);
+    cursor: pointer;
+}
+
+
+
+/* .checkbox:checked{
+    background-color: var(--light-green);
+    border-color: var(--light-green);    
+} */
 
 
 
