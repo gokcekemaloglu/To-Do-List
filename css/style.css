@@ -152,38 +152,38 @@ i:hover{
 
 @media screen and (max-width: 576px) {
     .container {
-        max-width: fit-content;
+        max-width: 90%;
 
     }
     .todoInput {
         max-width: fit-content;
     }
     .todos {
-      max-width: fit-content;
+      max-width: 90%;
     }
 }
 
 @media screen and (min-width: 576px) {
     .container {
-        max-width: 500px;
+        max-width: 90%;
     }
     .todoInput {
         max-width: 300px;
     }
     .todos {
-      max-width: fit-content;
+      width: 90%;
     }
 }
 
 @media screen and (min-width: 768px) {
     .container {
-        max-width: 600px;
+        max-width: 650px;
     }
     .todoInput {
         max-width: 400px;
     }
     .todos {
-      max-width: fit-content;
+        width: 90%;
     }
 }
 
@@ -195,7 +195,7 @@ i:hover{
         max-width: 400px;
     }
     .todos {
-      max-width: fit-content;
+      max-width: 90%;
     }
 }
 
