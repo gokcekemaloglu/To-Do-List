@@ -7,6 +7,7 @@
 :root{
     --primary-color: #333;
     --dark-green: #2F6058;
+    --medium-green: #438A7E;
     --light-green: #89C1B6;
 
 
@@ -80,6 +81,19 @@ h1 i{
     max-height: 400px;
     overflow-y: auto;
 }
+
+.todos::-webkit-scrollbar{
+    background: var(--light-green);
+    border-radius: 5px;
+
+}
+.todos::-webkit-scrollbar-thumb{
+    background: var(--medium-green);
+    border-radius: 5px;
+
+}
+
+
 
 .todoItem{
     display: flex;

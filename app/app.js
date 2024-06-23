@@ -66,8 +66,3 @@ const addTask = () => {
 
 addTaskButton.addEventListener("click", addTask)
 
-            // <li class="todoItem">
-            //     <i class="fa-regular fa-circle"></i>
-            //     <p class="todoText">Buy milk</p>
-            //     <i class="fa-solid fa-trash-can deleteTask"></i>
-            // </li>
