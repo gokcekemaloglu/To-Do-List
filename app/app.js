@@ -7,23 +7,50 @@ const toggleComplete = (event) => {
     todoItem.classList.toggle("checked")
     event.target.classList.toggle("fa-circle-check")
     event.target.classList.toggle("fa-circle")    
+    myLocalStorage()
 }
 
 const removeItem = (event) => {
     todosContainer.removeChild(event.currentTarget.parentElement)
+    myLocalStorage()
 }
 
 const isDuplicate = (text) => {
     const todos = todosContainer.querySelectorAll(".todoText")
     for (let todo of todos) {
-        if (todo.textContent === text) {
+        if (todo.textContent.toUpperCase() === text.toUpperCase()) {
             return true
         }
     }
     return false
 }
 
-const renderTodoItem = () => {
+const myLocalStorage = () => {
+    myData = []
+    console.log(todosContainer.childNodes);
+    [...todosContainer.childNodes].slice(3).forEach((item)=>{
+        let newTodo ={
+            text: item.querySelector(".todoText").textContent,
+            completed: item.classList.contains("checked")
+        }
+        myData.push(newTodo)
+    })
+    localStorage.setItem("myData", JSON.stringify(myData))
+}
+
+const getLocalStorage = () => {
+    if (localStorage.getItem("myData") !== null) {
+        myData = JSON.parse(localStorage.getItem("myData"))
+        myData.forEach((item) => {
+        renderTodoItem(item.text, item.completed)
+            
+            
+        })
+    }
+}
+
+const renderTodoItem = (text, completed) => {
+
     const todoItem = document.createElement("li")
     todoItem.classList.add("todoItem")
 
@@ -37,7 +64,7 @@ const renderTodoItem = () => {
 
     const textElement = document.createElement("p")
     textElement.classList.add("todoText")
-    textElement.textContent = todoInput.value.toUpperCase()
+    textElement.textContent = text.toUpperCase()
     todoItem.appendChild(textElement)
 
 
@@ -46,10 +73,18 @@ const renderTodoItem = () => {
     deleteButton.addEventListener("click", removeItem)
     todoItem.appendChild(deleteButton)
 
+    if (completed) {
+        todoItem.classList.add("checked")
+        todoItem.querySelector(".fa-circle").classList.toggle("fa-circle-check")
+        todoItem.querySelector(".fa-circle").classList.toggle("fa-circle")
+
+    }
+
 
     todosContainer.appendChild(todoItem)
     todoInput.value = ""
     todoInput.focus()
+    myLocalStorage()
 }
 
 const addTask = () => {
@@ -58,15 +93,21 @@ const addTask = () => {
     }else if (isDuplicate(todoInput.value)) {
         alert("This to-do item already exists")
     } else{
-        renderTodoItem(todoInput.textContent)
+        renderTodoItem(todoInput.value)
     }
 }
 
 addTaskButton.addEventListener("click", addTask)
 
+window.addEventListener("load", getLocalStorage)
 
 
 
+console.log('I');
+setTimeout(() => {
+console.log('love');
+}, 0);
+console.log('Javascript!');
 
 
 // if (textElement.textContent.includes(todoInput.value)) {
